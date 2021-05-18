@@ -305,7 +305,7 @@
 
 #### Kvantizácia(quantization) dvoj-a viacrozmerných signálov
 - vektorová(bloková) kvantizácia–proces priradenia každému vstupnému vektoru hodnôt jeden z výstupných vektorov (z tzv. kódovej knihy) v N rozmernom priestore
-- kóderaj dekóderobsahujú rovnakú kódovú knihu, po prijatí sa z tejto kódovej knihy vyberie reprezentatívny vektor
+- kóderaj dekóder obsahujú rovnakú kódovú knihu, po prijatí sa z tejto kódovej knihy vyberie reprezentatívny vektor
 
 ![obr9](img/obr9.png)
 
@@ -526,7 +526,7 @@ Napr. priestorovej rozlišovacej schopnosti
 
 - subjektívne metriky (podľa ITU-R Rec. BT.500 aITU-T Rec. 910)
     - metóda DSCQS –subjekty hodnotia dvojicu videosekvencií (testovacia vs. referenčná)
-    - metóda DSIS –subjektyhodnotiastupeň degradácie kvality testovaného videa
+    - metóda DSIS –subjekty hodnotia stupeň degradácie kvality testovaného videa
     - metóda SSCQE –subjekty sledujú video v trvaní 20-30 min. a priebežne hodnotia kvalitu
     - metóda ACR –subjekty hodnotia kvalitu každého testovaného videa, bez referenčného
     - metóda PC –subjekty hodnotia kvalitu každého páru testovaného videa tej istej scény
@@ -641,13 +641,13 @@ Napr. priestorovej rozlišovacej schopnosti
 
 ![obr44](img/obr44.png)
 
-- predikčné kódovanie je **veľmi náchzlné na skreslenia** najmň v oblastiach smrtných prechodov signálu (na hranách), kedy dochádza k preťaženiu prevodovej charakteristiky kvantizátora (tzn. ak hodnota predikovaných vzoriek signálu prekročí rozsah kvantizačných úrovní)
+- predikčné kódovanie je **veľmi náchylné na skreslenia** najmä v oblastiach smrtných prechodov signálu (na hranách), kedy dochádza k preťaženiu prevodovej charakteristiky kvantizátora (tzn. ak hodnota predikovaných vzoriek signálu prekročí rozsah kvantizačných úrovní)
 
 ![obr45](img/obr45.png)
 
 - typy skreslenia v DPCM
     - **granulačný šum**(granular noise) –náhodný šum v bielych plochách obrazu (neistotakvantizácie)
-    - **diskontinuita hrán** (edge busyness) –prítomnosť svetlých miest v tmavých hranách obrazu (neistotakvantizácie)
+    - **diskontinuita hrán** (edge busyness) –prítomnosť svetlých miest v tmavých hranách obrazu (neistota kvantizácie)
     - **rozmazanie hrán** (slope overload)                                                                                                             –dôsledok preťaženia kvantizátora                                                                                                            (výstup sa mení skokovito, priebeh zaostáva za zmenou vstupného signálu)
 
 ![obr46](img/obr46.png)
@@ -772,7 +772,7 @@ Napr. priestorovej rozlišovacej schopnosti
 - **z hľadiska kvantovania transformačných koeficientov**
     -   kvantovanie lineárnym/nelineárnym kvantizátorom s konštantným počtom bitov
     - blokové kvantovanie s nerovnomerne prideľovaným počtom bitov
-- **z hľadiskaľudského systému vnímania (HVS –human visual system)** 
+- **z hľadiska ľudského systému vnímania (HVS –human visual system)** 
     - kvantizačný krok by sa mal voliť tak, aby kvantizačný šum bol pod vizuálnym prahom
     - vizuálne prahy sú rôzne pre rozdielne priestorové frekvencie                                                                 (pri transformačnom kódovaní pre nízke priestorové frekvencie)
     - perceptívne optimalizovanej kvantizácie, ktorá používa maticu kvantizačných váh                              (od toho závisí aj kompresný pomer a kvalita rekonštruovaného obrazu)
@@ -824,19 +824,19 @@ Napr. priestorovej rozlišovacej schopnosti
 
 - dekompozícia originálneho signálu na signálové komponenty
 - waveletová transformácia používa časovo ohraničené funkcie, tzv. wavelety
-- zovšeobecnenie časovo-frekvenčnej (spektrálnej)analýzysignálov
-- alternatívaku krátkodobej Fourierovej transformácii(STFT)
-- umožňuje získať v rôznych časoch apri rôznych frekvenciách odlišné rozlíšenie (časová lokalizácia udalostí aj v získanom spektre)
+- zovšeobecnenie časovo-frekvenčnej (spektrálnej)analýzy signálov
+- alternatíva ku krátkodobej Fourierovej transformácii(STFT)
+- umožňuje získať v rôznych časoch a pri rôznych frekvenciách odlišné rozlíšenie (časová lokalizácia udalostí aj v získanom spektre)
 - transformácia pomocou waveletov môže byť chápaná aj ako dekompozícia vo frekvenčnej oblasti s priestorovým usporiadaním
 - využíva základné (materské) waveletové funkcie, ktoré môžu byť rozťahované (dilatované)alebo posúvané
-- rozklad signálu do množiny funkcií, ktorých základom je materská waveletová funkciaψ(t)(Haarova, Meyerova, Morletova, Daubechiesovej), z ktorej sú odvodzované ďalšie funkcie postupnoudilatáciou (a)aposunom v čase (t)
-- waveletová transformácia potom hľadá podobnosť waveletu s časťouanalyzovaného signálu
+- rozklad signálu do množiny funkcií, ktorých základom je materská waveletová funkcia ψ(t)(Haarova, Meyerova, Morletova, Daubechiesovej), z ktorej sú odvodzované ďalšie funkcie postupnou dilatáciou (a)aposunom v čase (t)
+- waveletová transformácia potom hľadá podobnosť waveletu s časťou analyzovaného signálu
 
  ![obr66](img/obr66.png)
  ![obr67](img/obr67.png)
  ![obr68](img/obr68.png)
 
-- koeficientyWT tvoriahierarchickú údajovú štruktúru(pyramídu)
+- koeficienty WT tvoria hierarchickú údajovú štruktúru(pyramídu)
 - existuje tu značná korelácia medzi absolútnymi hodnotami koeficientov susedných hladín
 - nulové stromy (zerotrees) –úsporné kódovanie nevýznamných koeficientov tvoriacich rodinu
  ![obr69](img/obr69.png)
@@ -850,8 +850,8 @@ Napr. priestorovej rozlišovacej schopnosti
 
  - Typy pyramíd
     - neprekrývateľné (typ. 2x2op) –každý blok obrazového prvku na nižšej hladine vytvára jediný obrazový prvok na vyššej hladine
-    - prekrývateľné (typ. 5x5op) -každý blok obrazového prvku na nižšej hladine sapodieľa na vytvorení viacerých obrazových prvkov na vyššej hladine
-        –Gaussova pyramída –aplikácia DP filtra na predošlú hladinu spojenú s decimácioupriestorovej rozlišovacej schopnosti, pričom váhovú funkciu možno aproximovať Gaussovým rozdelením
+    - prekrývateľné (typ. 5x5op) -každý blok obrazového prvku na nižšej hladine sa podieľa na vytvorení viacerých obrazových prvkov na vyššej hladine
+        –Gaussova pyramída –aplikácia DP filtra na predošlú hladinu spojenú s decimáciou priestorovej rozlišovacej schopnosti, pričom váhovú funkciu možno aproximovať Gaussovým rozdelením
         –Laplaceova pyramída –postupnosť pásmovo filtrovaných obrazov (rozdiel susedných hladín Gaussovej pyramídy), úprava rozmeru vyššej hladiny Gaussovej pyramídy sa realizuje interpoláciou (vsunutím) obrazového prvku medzi dva obrazové prvky
 
 - konštrukcia Gaussovej (vľavo) a Laplaceovej pyramídy (vpravo)
@@ -868,7 +868,7 @@ Napr. priestorovej rozlišovacej schopnosti
     - analýza signálov a spojitých sústav (predpoveď zemetrasenia, analýza turbulencií, a i.)
     - hierarchický režim zobrazovania pomocou pyramídového kódovania (JPEG)
     - kódovanie statických obrazov na báze diskrétnej waveletovej transformácie (JPEG2000)
-    - väčšina rečových aaudio kodekov pracuje na princípe subpásmového kódovania
+    - väčšina rečových a audio kodekov pracuje na princípe subpásmového kódovania
     - ochrana multimediálneho obsahu pomocou digitálnej vodotlače na báze DWT
 
 **Zhodnotenie**
@@ -926,7 +926,8 @@ Napr. priestorovej rozlišovacej schopnosti
 - **Huffmanovo kódovanie**
     - základné entropické (bezstratové) kódovanie s premennou dĺžkou kódového slova
     - najviac vyskytujúcim znakom je priradené najkratšie kódové slovo (podobne ako           u Morseovej abecedy)
-    - optimálny prefixový kód❖je to najkratší kód, má                                                                                                      minimálnu strednú dĺžku                                                                                                      kódového slova
+    - optimálny prefixový kód
+    - je to najkratší kód, má                                                                                                      minimálnu strednú dĺžku                                                                                                      kódového slova
     - konštrukcia v tvare                                                                                                          od listov ku koreňu
     - používa sa v štandardoch                                                                                                     JPEG, MPEG, Ogg/Vorbis,                                                                                                      WMA, ACC
 
@@ -941,8 +942,8 @@ Napr. priestorovej rozlišovacej schopnosti
     - zložitý na výpočet –náročné aritmetické operácie s reálnymi číslami
     - problémy s implementáciou kvôli patentu
     - ďalšie modifikácie aritmetického kódovania, ktoré berú do úvahy kontext
-        –CAVLC(context-adaptive variable length coding) –s premennou dĺžkou kódového slova
-        –CABAC(context-adaptive binary arithmetic coding) –s pevnou dĺžkou kódového slova
+        – CAVLC(context-adaptive variable length coding) –s premennou dĺžkou kódového slova
+        – CABAC(context-adaptive binary arithmetic coding) –s pevnou dĺžkou kódového slova
     - modifikované verzie aritmetického kódovania CAVLC a CABAC sa používajú najmä      vo video štandarde H.264
 
    ![obr83](img/obr83.png)
@@ -968,24 +969,24 @@ Napr. priestorovej rozlišovacej schopnosti
 ## Prednáška č.9
 ## Analýza obsahu multimediálnych signálov
 
-- **analýza obsahu obrazových signálov** (image content analysis)
-    - základné vlastnosti obrazových signálov
-        – farba (color), farebný tón (hue), sýtosť (saturation)a jas (brightness)
-        – textúra(texture)
-        – histogram
-    - perceptívne (psychovizuálne) vlastnosti obraz. signálov –model ľudského vizuálneho systému
-        – priestorové maskovanie (spatial filtering)
-            - citlivosť oka na intenzitu
-            - adaptácia oka na intenzitu (simultaneous contrast)
-        – Machov pásmový efekt (Mach band effect)
-    - morfologické vlastnosti obrazových signálov –segmentácia obrazu
-        – prahovanie (thresholding)
-        – matematická morfológia binárnych obrazov –dilatácia, erózia, otvorenie a uzatvorenie
-        – detekcia hrán a rohov (edge/corner detection)
-        – detekcia kontúry a tvaru (contour/shape detection)
-        – metóda watershed
-        – zhluková analýza (image clustering)
-        – analýza pohybu (motion analysis)
+**analýza obsahu obrazových signálov** (image content analysis)
+- základné vlastnosti obrazových signálov
+    – farba (color), farebný tón (hue), sýtosť (saturation)a jas (brightness)
+    – textúra(texture)
+    – histogram
+- perceptívne (psychovizuálne) vlastnosti obraz. signálov –model ľudského vizuálneho systému
+    – priestorové maskovanie (spatial filtering)
+        - citlivosť oka na intenzitu
+        - adaptácia oka na intenzitu (simultaneous contrast)
+    – Machov pásmový efekt (Mach band effect)
+- morfologické vlastnosti obrazových signálov –segmentácia obrazu
+    – prahovanie (thresholding)
+    – matematická morfológia binárnych obrazov –dilatácia, erózia, otvorenie a uzatvorenie
+    – detekcia hrán a rohov (edge/corner detection)
+    – detekcia kontúry a tvaru (contour/shape detection)
+    – metóda watershed
+    – zhluková analýza (image clustering)
+    – analýza pohybu (motion analysis)
 
 ### Základné vlastnosti obrazových signálov
 
@@ -1039,9 +1040,9 @@ Napr. priestorovej rozlišovacej schopnosti
 
 - **detekcia hrán a rohov** (edge/corner detection)
     - hľadanie oblastí v obraze, kde dochádza k výraznej zmene jasu, resp. intenzite jasu
-    - hranaje hranica medzi dvoma oblasťami s relatívne rozdielnymi hodnotami jasu 
-    - v ideálnom prípade ide o získani uzatvorených kriviek, ktoré vyznačujú hranice objektov
-    - matematicky sa vykonáva výpočtom prveja druhej derivácie a určením gradientu
+    - hrana je hranica medzi dvoma oblasťami s relatívne rozdielnymi hodnotami jasu 
+    - v ideálnom prípade ide o získanie uzatvorených kriviek, ktoré vyznačujú hranice objektov
+    - matematicky sa vykonáva výpočtom prvej a druhej derivácie a určením gradientu
     - operátory na výpočet gradientu
         - Robertov operátor
         - Prewittov operátor (1. derivácia)
@@ -1077,11 +1078,11 @@ Napr. priestorovej rozlišovacej schopnosti
         
         ![obr95](img/obr95.png)
 
-- **analýza pohybu** (motion analysis)
-    - založená na tzv. estimácii pohybu, t.j. výpočte relatívneho posunutia bloku obrazových prvkov v aktuálnej a predošlej snímke videa, ktoré sa označuje ako vektor pohybu
-    - algoritmy na estimáciu pohybu delíme na
-        – iteračné algoritmy –pracujú na úrovni obrazových prvkov a sú založené na rekurzívnej minimalizácii predikčnej chyby; ich použitie je obmedzené len na veľmi malý pohyb
-        – algoritmy s blokovým prehľadávaním –vychádzajú z predpokladu, že všetky obrazové prvky v bloku obrazu vykazujú rovnaký pohyb; pre každý blok v aktuálnej snímke sa hľadá najpodobnejší blok v predchádzajúcej snímke
+**analýza pohybu** (motion analysis)
+- založená na tzv. estimácii pohybu, t.j. výpočte relatívneho posunutia bloku obrazových prvkov v aktuálnej a predošlej snímke videa, ktoré sa označuje ako vektor pohybu
+- algoritmy na estimáciu pohybu delíme na:
+    - iteračné algoritmy –pracujú na úrovni obrazových prvkov a sú založené na rekurzívnej minimalizácii predikčnej chyby; ich použitie je obmedzené len na veľmi malý pohyb
+    - algoritmy s blokovým prehľadávaním –vychádzajú z predpokladu, že všetky obrazové prvky v bloku obrazu vykazujú rovnaký pohyb; pre každý blok v aktuálnej snímke sa hľadá najpodobnejší blok v predchádzajúcej snímke
 
 - **analýza pohybu** (motion analysis)
     - algoritmus s blokovým prehľadávaním
@@ -1129,7 +1130,7 @@ Napr. priestorovej rozlišovacej schopnosti
 ![obr99](img/obr99.png)
 
 - **analýza signálu v čase**
-    - autokorelačná funkcia(autocorrelation function) –zvýrazňuje periodické zložky v signále,               slúži a odhad základnej frekvencie hlasu (fundamental frequency)
+    - autokorelačná funkcia(autocorrelation function) –zvýrazňuje periodické zložky v signále,               slúži na odhad základnej frekvencie hlasu (fundamental frequency)
 
 ![obr100](img/obr100.png)
 
@@ -1163,13 +1164,13 @@ Napr. priestorovej rozlišovacej schopnosti
 - **viackanálová analýza**
     - priestorová filtrácia signálov (spatial filtration)
     - lokalizácia zdroja zvuku a jeho sledovanie (beamforming)
-    - etekciapresluchov
+    - detekcia presluchov
     - separacia signálov
 
 
 ### Perceptívne vlastnosti rečových a audio signálov
 
-- **krivka počuteľnosti*
+- **krivka počuteľnosti**
     - absolútny prah počuteľnosti ľudského ucha definuje krivka počuteľnosti, ktorá je nelineárne a frekvenčne závislá
     - zložky, ktoré ležia pod absolútnym prahom počuteľnosti, nie je potrebné kódovať a prenášať
     - v okolí signálu s vysokou frekvenciou dochádza k deformácii krivky počuteľnosti
@@ -1177,7 +1178,7 @@ Napr. priestorovej rozlišovacej schopnosti
 
     ![obr103](img/obr103.png)
 
-- **jednodušený model maskovania**
+- **zjednodušený model maskovania**
     - používa frekvenčnú stupnicu udávanú v barkoch, založenú na kritických frekvenčných pásmach
     - kritické frekvenčné pásma korešpondujú so šírkami pásiem,   tzv. kochlearnej banky filtrov, inšpirovaná modelom vnutorného ucha človeka
     - kritické pásma majú konštantnú  šírku 100 Hz do 500 Hz, pre vyššie frekvencie sa šírka zväčšuje o 20%
@@ -1223,37 +1224,37 @@ Napr. priestorovej rozlišovacej schopnosti
 
 - **požiadavky**
     - kompresný pomer na špičkovej úrovni s výbornou kvalitou rekonštruovaného obrazu
-    - použiteľnosť na väčšinu viacúrovňových afarebných obrazovv ľubovoľnom farebnom priestore a pri ľubovoľnej veľkosti
-    - výpočtová náročnosť na úrovni dostupnýchtechnických a programových prostriedkov
+    - použiteľnosť na väčšinu viacúrovňových a farebných obrazov v ľubovoľnom farebnom priestore a pri ľubovoľnej veľkosti
+    - výpočtová náročnosť na úrovni dostupných technických a programových prostriedkov
     - realizácia 4 režimov činnosti
-        – sekvenčné kódovanie
-        – postupné kódovanie
-        – hierarchické kódovanie
-        –bezstratové kódovanie
+        - sekvenčné kódovanie
+        - postupné kódovanie
+        - hierarchické kódovanie
+        - bezstratové kódovanie
     - podpora 2 základných prístupov v kódovaní 
-        – stratové kódovanie na báze DCT
-        – bezstratové kódovanie na báze predikčného kódovania
+        - stratové kódovanie na báze DCT
+        - bezstratové kódovanie na báze predikčného kódovania
 
 ![obr108](img/obr108.png) 
 
 **Kódovanie v JPEG**
 
 - v RL kódovaní sa transformuje postupnosť dvojíc symbolov(symbol 1, symbol 2)
-- symbol 1 -počet nulových koeficientov (0-15koeficientov)
+- symbol 1 -počet nulových koeficientov (0-15 koeficientov)
 - symbol 2 -veľkosť (amplitúda) nenulového koeficienta
 
 ![obr109](img/obr109.png) 
 
 ### Ďalšie režimy kódovania v JPEG
     - postupný (progressive) režim
-        - kódovanie obrazu na bázediskrétnej kosínusovej transformácie(DCT)
+        - kódovanie obrazu na báze diskrétnej kosínusovej transformácie(DCT)
         - najprv v hrubých rysoch, neskôr v detailoch
         - rýchlejšie rozpoznanie obsahu na prijímacej strane ako pri sekvenčnom prenose pri vysokej kvalite
         - prenos v postupnom režime možno realizovať pomocou dvoch metód
             – spektrálna selekcia
             – postupná aproximácia
     - hierarchický (hierarchical) režim
-        -kódovanie obrazu pyramidálnym spôsobom, ako postupnosť hladín
+        - kódovanie obrazu pyramidálnym spôsobom, ako postupnosť hladín
         - základňu pyramídy tvorí originálny obrazv plnej priestorovej rozlišovacej schopnosti
         - každá vyššia hladina sa získa redukciou priestorovej rozlišovacej schopnosti faktorom 2
     - bezstratový (lossless) režim
@@ -1278,20 +1279,20 @@ Napr. priestorovej rozlišovacej schopnosti
 
 ![obr112](img/obr112.png)
 
- **bezstratový režim****
-    - využíva predikčné kódovaniebez využitia DCT
-    - prediktor generuje predikčnú hodnotu obrazového prvku s využitím troch susedných obrazových prvkov A,B aC
-    - bezstratovým kódovaním VLCsa kóduje rozdiel medzi skutočnou a predikovanou hodnotou
-    - Huffmanov / aritmetický kód
-    -činiteľ kompresie 2
+ **bezstratový režim**
+- využíva predikčné kódovanie bez využitia DCT
+- prediktor generuje predikčnú hodnotu obrazového prvku s využitím troch susedných obrazových prvkov A,B a C
+- bezstratovým kódovaním VLC sa kóduje rozdiel medzi skutočnou a predikovanou hodnotou
+- Huffmanov / aritmetický kód
+- činiteľ kompresie 2
 
 ![obr113](img/obr113.png)
 
 ### JPEG2000
 - základná charakteristika 
-    - vysoká účinnosť kompresieobrazov v zmysle počtu bitov na obrazový prvok
+    - vysoká účinnosť kompresie obrazov v zmysle počtu bitov na obrazový prvok
     - účinná kompresia obrazov v širšom rozsahu jasovej rozlišovacej schopnosti (do 16 bit/op)
-    - režim so stratovoua bezstratovou kompresiou
+    - režim so stratovou a bezstratovou kompresiou
     - možnosť postupného prechoduod stratovej k bezstratovej kompresii
     - postupný prenos obrazov s rozlíšením a presnosťou na jeden obrazový prvok
     - umožňuje kódovanie oblastí záujmu
@@ -1300,21 +1301,21 @@ Napr. priestorovej rozlišovacej schopnosti
     - podporuje ochranu autorských práv
 
 **princíp kódovania** 
-    - vstupný obraz dekomponovaný na obrazové zložky
-    - obrazové zložky dekomponované na pravouhlé bloky
-    - na každý blok sa aplikuje waveletová transformácia
-    - každý blok sa rozdelí na rôzne úrovne rozlíšenia (horiz., vert., diag. a aprox.)
-    - jednotlivé úrovne vytvárajú subpásmové koeficienty
-    - subpásmové koeficienty sú kvantované a zoskupené do kódových blokov
-    - koeficienty v kódovom bloku sú kódované po bitových rovinách
-    - určité oblasti záujmu (region of interest coding) možno kódovať kvalitnejšie než pozadie
-    - výstupný bitový tok obsahuje na svojom začiatku hlavičku
+- vstupný obraz dekomponovaný na obrazové zložky
+- obrazové zložky dekomponované na pravouhlé bloky
+- na každý blok sa aplikuje waveletová transformácia
+- každý blok sa rozdelí na rôzne úrovne rozlíšenia (horiz., vert., diag. a aprox.)
+- jednotlivé úrovne vytvárajú subpásmové koeficienty
+- subpásmové koeficienty sú kvantované a zoskupené do kódových blokov
+- koeficienty v kódovom bloku sú kódované po bitových rovinách
+- určité oblasti záujmu (region of interest coding) možno kódovať kvalitnejšie než pozadie
+- výstupný bitový tok obsahuje na svojom začiatku hlavičku
 
 
 ### Predspracovanie v JPEG 2000
 - základné operácie 
     - dekompozícia originálneho obrazu na pravouhlé neprekrývateľné segmenty
-    - posun jednosmernej úrovne (od hodnotyvzorkysaodčíta konštanta 2 na 𝑝−1, kde pje počet bitov na vzorku obrazovej zložky)
+    - posun jednosmernej úrovne (od hodnoty vzorky sa odčíta konštanta 2 na 𝑝−1, kde p je počet bitov na vzorku obrazovej zložky)
     - transformácia obrazových zložiek –zlepšuje kompresiu a umožňuje kvantizáciu iba vizuálne relevantnej informácie
 
 ![obr114](img/obr114.png)
@@ -1350,7 +1351,7 @@ Napr. priestorovej rozlišovacej schopnosti
 - režim zvýšenej odolnosti voči chybám –použitie VLC na báze aritmetického kódovania je náchylné k chybám -> vhodná štruktúra dát, spätná synchronizácia, detekcia chýb a i.
     - na úrovni etropického kódovania
     - na úrovni paketov
-- váhovanie priestorových (vizuálnych) frekvenciípomocou funkcií citlivosti na kontrast CSF (contrast sensitivity function)
+- váhovanie priestorových (vizuálnych) frekvencií pomocou funkcií citlivosti na kontrast CSF (contrast sensitivity function)
 - ochrana autorských práv na báze vodoznakov
 
 
@@ -1368,8 +1369,8 @@ Napr. priestorovej rozlišovacej schopnosti
     - bitmapový formát, ktorý mal nahradiť GIF
     - flexibilný formát so štruktúrou pripomínajúcou kontajner
     - pracuje v dvoch krokoch
-        – predkompresia –dekorelácia vstupných dát na báze DPCM
-        – kompresia –algoritmus DEFLATE a Huffmanovo kódovanie aplikované na bloky dát
+        - predkompresia –dekorelácia vstupných dát na báze DPCM
+        - kompresia –algoritmus DEFLATE a Huffmanovo kódovanie aplikované na bloky dát
     - lepšie zachovanie hrán a ostrých prechodov aj za cenu horšej kompresie než JPEG
 
 - WebP (Google)
@@ -1394,8 +1395,8 @@ Napr. priestorovej rozlišovacej schopnosti
     - vplyv zmeny tvarov a rozmerov jednotlivých častí vokálneho traktu na charakter akustickej vlny možno na prijímacej strane modelovať lineárnym číslicovým filtrom          s časovo premennými parametrami
     - digitalizovaný rečový signál sa najprv segmentuje na úseky dĺžky 10–30 ms
     - pre každý segment sa vypočíta súbor koeficientov určujúcich singularity prenosovej funkcie číslicového filtra
-    - na vyjadrenie hodnôt koeficientov určujúcich singularity prenosovej funkcie sa najčastejšie využíva metóda lineárnej predikcie(LPC –linearpredictioncoding)
-    - v LPC sa určujú parametre, ktoré minimalizujú strednú kvadratickú odchýlkumedzi skutočnými a predikovanými vzorkami rečového signálu
+    - na vyjadrenie hodnôt koeficientov určujúcich singularity prenosovej funkcie sa najčastejšie využíva metóda lineárnej predikcie(LPC –linear prediction coding)
+    - v LPC sa určujú parametre, ktoré minimalizujú strednú kvadratickú odchýlku medzi skutočnými a predikovanými vzorkami rečového signálu
 
 - Model generovania reči
     - budenie vokálneho traktu –impulzný generátor a generátor šumu, ktorých výstupy sú vynásobené veličinou G (ziskom)
@@ -1411,7 +1412,7 @@ Napr. priestorovej rozlišovacej schopnosti
 - **optimálne kódovanie rečových signálov**
     - kombinácia metódy LPC a vektorového kvantovania,
 
-    - metóda CELP(code-excitation linear prediction) –navysielaceja prijímacej strane je vytvorené identická kódová kniha budiacich postupností (prenosovárýchlosť 4-8 kb/s)
+    - metóda CELP(code-excitation linear prediction) –na vysielacej a prijímacej strane je vytvorené identická kódová kniha budiacich postupností (prenosová rýchlosť 4-8 kb/s)
     - metóda LD-CELP(low delay CELP) –so spätnoväzobným riadením adaptácie je vylepšením CELP a znižuje oneskorenie z 35 ms až na 2 ms pri prenosovej rýchlosti 16 kb/s
 
 ![obr119](img/obr119.png)
@@ -1433,7 +1434,7 @@ Napr. priestorovej rozlišovacej schopnosti
 ![obr120](img/obr120.png)
 
 - štandardy na báze analyticko-syntetických metód s využitím LPC
-    - G.728 –LD-CELP;kódová kniha s 128 vektormi;𝑓𝑣𝑧= 8 kHz, prenosová rýchlosť 16 kb/s;oneskorenie do 2 ms;pre aplikácieVoIPa videokonferenčné systémy
+    - G.728 –LD-CELP;kódová kniha s 128 vektormi;𝑓𝑣𝑧= 8 kHz, prenosová rýchlosť 16 kb/s;oneskorenie do 2 ms;pre aplikácie VoIP a videokonferenčné systémy
     - G.729–CS-ACELP;veľkosť rámca 10 ms;𝑓𝑣𝑧= 8 kHz;prenosová rýchlosť 8kb/s;pre aplikácie vo videotelefónii;veľmi zložitá implementácia algoritmu
     - G.731.1–dva rečové kodekyMPC-MLQ aACELP;veľkosť rámca 30 ms;prenosová rýchlosť 5,3 a 6,4 kb/s;oneskorenie až 67,5 ms;pre multimediálne aplikácie
     - G.722.2–ACELP;veľkosť rámca 20 ms a 16 LPC;𝑓𝑣𝑧= 16 kHz;širka pásma 50-70 Hz;prenos. rýchlosť od 6,6-23,85 kb/s;v moderných telekomunikačných sieťach na báze GSM, EDGE, 3G, UTMS a VoIP
@@ -1466,23 +1467,23 @@ Napr. priestorovej rozlišovacej schopnosti
 
 - základné metódy
     - subpásmové kódovanie(subbandcoding)
-        – vstupný signál prechádza hybridnou bankou filtrov (M filtrov)
-        – decimované vzorky sú kvantované a kódované
-        – pri dekódovaní sa realizuje proces interpolácie určitým počtom nulových vzoriek
-        – spätným prechodom cez banku filtrov sa získa rekonštruovaný signál
+        - vstupný signál prechádza hybridnou bankou filtrov (M filtrov)
+        - decimované vzorky sú kvantované a kódované
+        - pri dekódovaní sa realizuje proces interpolácie určitým počtom nulových vzoriek
+        - spätným prechodom cez banku filtrov sa získa rekonštruovaný signál
     - transformačnékódovanie(transform coding)
-        – vzorky vstupného signálu sú lineárne transformované pomocou DOT na súbor dekorelovaných transformačných koeficientov
-        – transformačné koeficienty sa kvantujú a prenášajú
-        – v dekodéri sa realizuje inverzná transformácia, ktorou sa získajú rekonštruované časové vzorky
-        – ak neuvažujeme kvantizačné skreslenie, proces rekonštrukcie je bezstratový
-        – na odstránenie blokového efektu sa využíva modifikovaná DCTs 50% prekrývaním okiena hybridná bankaQMFfiltrov na flexibilné frekvenčné delenie vstupného signálu  
+        - vzorky vstupného signálu sú lineárne transformované pomocou DOT na súbor dekorelovaných transformačných koeficientov
+        - transformačné koeficienty sa kvantujú a prenášajú
+        - v dekodéri sa realizuje inverzná transformácia, ktorou sa získajú rekonštruované časové vzorky
+        - ak neuvažujeme kvantizačné skreslenie, proces rekonštrukcie je bezstratový
+        - na odstránenie blokového efektu sa využíva modifikovaná DCTs 50% prekrývaním okiena hybridná banka QMF filtrov na flexibilné frekvenčné delenie vstupného signálu  
 
 - prečo vôbec hybridná banka filtrov?
     - prepínanie veľkosti transformačného okna(window switching)
-        – pre-echo–prechod medzi periódou ticha a nárazovým zvukom = veľká kvantizačná chyba
-        – na jeho odstránenie za používa zmenšenie transform.okna, jeho prepínaním (z 1024 na64/128)
+        - pre-echo–prechod medzi periódou ticha a nárazovým zvukom = veľká kvantizačná chyba
+        - na jeho odstránenie za používa zmenšenie transform. okna, jeho prepínaním (z 1024 na 64/128)
     - dynamická alokácia bitov (dynamic bit allocation)
-        – zmena počtu bitov v závislosti na okamžitých spektrálnych vlastnostiach kódovaného bloku označovaná ako ATC (adaptive transform coding)
+        - zmena počtu bitov v závislosti na okamžitých spektrálnych vlastnostiach kódovaného bloku označovaná ako ATC (adaptive transform coding)
 
 
 ### Štandardy na kódovanie audia
@@ -1504,12 +1505,12 @@ Napr. priestorovej rozlišovacej schopnosti
 
 ![obr123](img/obr123.png)
 
-    - štandard podporuje vzorkovacie frekvencie 32, 44,1 a 48 kHz a prenosové rýchlosti 32-192 kb/s pre mono a 64-384 kb/s pre stereo
-    - kanálové módy
-        – single mód –monofonický kanál
-        – dual mód –dva nezávislé monofonické kanály
-        – stereo mód –pravý a ľavý kanál snímaný nezávisle
-        – joint stereo mód –prenáša koreláciu medzi pravým a ľavým stereo kanálom
+- štandard podporuje vzorkovacie frekvencie 32, 44,1 a 48 kHz a prenosové rýchlosti 32-192 kb/s pre mono a 64-384 kb/s pre stereo
+- kanálové módy
+    - single mód –monofonický kanál
+    - dual mód –dva nezávislé monofonické kanály
+    - stereo mód –pravý a ľavý kanál snímaný nezávisle
+    - joint stereo mód –prenáša koreláciu medzi pravým a ľavým stereo kanálom
 
 - **kóder pre vrstvu I**
     - banka filtrov používa 32 subpásmových filtrov rádu 512 s polyfázovou konštrukciou
@@ -1517,7 +1518,7 @@ Napr. priestorovej rozlišovacej schopnosti
     - globálny mask. prah = súčet individuálnych mask. prahov a absolútneho mask. prahu
     - počet kvant. úrovní stanovuje psychoakustický model
     - činiteľ normovania používa 12 vzoriek
-    - prenosová rýchlosť 384 kb/skóder 
+    - prenosová rýchlosť 384 kb/s kóder 
 
 - **kóder pre vrstvu II**
     - banka filtrov používa 32 subpásmových filtrov rádu 512 s polyfázovou konštrukciou
@@ -1525,16 +1526,16 @@ Napr. priestorovej rozlišovacej schopnosti
     - globálny mask. prah využíva vlastnosti sluchového vnímania
     - počet kvantizačných úrovní stanovuje psychoakustický model
     - činiteľ normovania používa 36 vzoriek
-    - prenosová rýchlosť 192kb/s
+    - prenosová rýchlosť 192 kb/s
 
 ![obr124](img/obr124.png)
 
 - **kóder pre vrstvu III**
     - nové postupy v kódovaní audio signálov
-        – prepínateľná hybridná banka filtrov (6 alebo18 bodová MDCT s 50%-ným prekrytím)
-        – analyticko-syntetická metóda pri výpočte globálneho maskovacieho prahu                  (udržanie kvantizačného šumu vo všetkých kritických pásmach)
-        – nerovnomerná kvantizácia s entropickým Huffmanovým kódovaním (max. 32 bit. kód slovo)
-        – prenosová rýchlosť 128 kb/s
+        - prepínateľná hybridná banka filtrov (6 alebo 18 bodová MDCT s 50%-ným prekrytím)
+        - analyticko-syntetická metóda pri výpočte globálneho maskovacieho prahu                  (udržanie kvantizačného šumu vo všetkých kritických pásmach)
+        - nerovnomerná kvantizácia s entropickým Huffmanovým kódovaním (max. 32 bit. kód slovo)
+        - prenosová rýchlosť 128 kb/s
 
 ![obr125](img/obr125.png)
 
@@ -1565,7 +1566,7 @@ Napr. priestorovej rozlišovacej schopnosti
     - blok kódovania kanálu –kód. mono/stereo, dvojice kanálov a korelácie medzi kanálmi
     - kvantizácia a kódovanie –kvantovanie spektrálnych komponentov + Huffmannovo kódovanie
     - multiplexor–združuje kódovaný audio signál v jednotlivých kanáloch
-    - prenosová rýchlosť 320 kb/spre všetkých 5 kanálov (L, R, C, LS, RS)
+    - prenosová rýchlosť 320 kb/s pre všetkých 5 kanálov (L, R, C, LS, RS)
 
 ### ISO/MPEG-4 Audio
 
@@ -1574,7 +1575,7 @@ Napr. priestorovej rozlišovacej schopnosti
     - analyticko-syntetické kódovanie so strednými prenos. rýchlosťami (6-16 kb/s)
     - subpásmové kódovanie s technológiou SBR pre vyššie prenos. rýchlosti (32-48 kb/s)
     - subpásmové, resp. transformačné kódovanie pre vyššie prenos. rýchlosti (64-128 kb/s)
-    - bezstratové kódovanie pre perfektnú rekonštrukiu signálu (750 kb/s)
+    - bezstratové kódovanie pre perfektnú rekonštrukciu signálu (750 kb/s)
 - základné typy
     - štandard MPEG-4 AAC –oproti MPEG-2 AAC obsahuje modul PNS (perceptual noise substitution), ktorý identifikuje spektrálne koeficienty s charakterom šumu a kóduje ich ako náhodný šum s jeho priemerným výkonom
     - štandard MPEG-4 HE-AAC –po dekompozícii vstupného signálu do 64 subpásiem bankami QMF filtrov sa spektrálne zložky po MDCT rozdelia na nízko-a vysokofrekvenčnú časť a SBR kóder hľadá najlepšiu zhodu medzi signálmi v nižších a vyšších pásmach
@@ -1582,9 +1583,9 @@ Napr. priestorovej rozlišovacej schopnosti
 ### ISO/MPEG-D Audio
 
 - základné typy
-    - MPEG-D Part I   –SACpriestorové kódovanie viackanálového audia
-    - MPEG-D Part II  –SAOCumožňuje používateľovi dekódovať individuálne audio objekty, napr. individuálne hudobné nástroje, vokály,                                                                                                  ľudské hlasy a pod.
-    - MPEG-D Part III –USACintegrácia prostriedkov                                                                                                na parametrické kódovanie                                                                                                    reči a audia
+    - MPEG-D Part I   –SAC priestorové kódovanie viackanálového audia
+    - MPEG-D Part II  –SAOC umožňuje používateľovi dekódovať individuálne audio objekty, napr. individuálne hudobné nástroje, vokály,                                                                                                  ľudské hlasy a pod.
+    - MPEG-D Part III –USAC integrácia prostriedkov                                                                                                na parametrické kódovanie                                                                                                    reči a audia
 
 ![obr127](img/obr127.png)
 
@@ -1610,9 +1611,9 @@ Napr. priestorovej rozlišovacej schopnosti
     - kompresia audia so vzorkovaním 44,1 kHz a 16 bit/vz., prenos. rýchlosť 146 –705,6 kb/s
     - jednoduchá hardvérová implementácia vhodná pre prenosné prehrávače MiniDisc
 - základné typy
-    - ATRAC 2–3 subpásma;vzorkovaciafrekv. 44,1 kHz;16 bit/vz.;prenos. rýchlosť 64 kb/s,
-    - ATRAC 3 –4 subpásma;aplikácia MDCT na jednotlivé subpásma
-    - ATRAC 3 Plus –2x účinnejší oproti ATRAC 3;16 subpásiem;multikanálové kódovanie
+    - ATRAC 2–3 subpásma;vzorkovacia frekv. 44,1 kHz;16 bit/vz.;prenos. rýchlosť 64 kb/s,
+    - ATRAC 3 –4 subpásma; aplikácia MDCT na jednotlivé subpásma
+    - ATRAC 3 Plus –2x účinnejší oproti ATRAC 3;16 subpásiem; multikanálové kódovanie
     - ATRAC Advanced Lossless –bezstratové kódovanie;redukcia objemu originálnych dát o 30-80%
 
 ### Ďalšie typy audioformátov
@@ -1620,7 +1621,7 @@ Napr. priestorovej rozlišovacej schopnosti
     - Free Loseless Audio Codec(.flac) –určený na streamovanie hudby cez Internet;kompresný pomer 2:1 –4:1
     - Monkeys Audio (.ape) –používa Huffmanovo entropické kódovanie a komprimáciu formátu WAV až o 55%
 - stratové kodeky
-    - Musepack(.mpc) –subpásmovýkodek;ideálny pre archiváciu hudby;od 160 kb/s efektívnejší než formát MP3 alebo AAC
+    - Musepack(.mpc) –subpásmový kodek;ideálny pre archiváciu hudby;od 160 kb/s efektívnejší než formát MP3 alebo AAC
     - Ogg Vorbis(.ogg) –open source projekt;pri 64 kb/s konkuruje formátu MP3;pri 96 kb/s konkuruje formátu AAC
     - Windows Media Audio (.wma) –rýchly kodek;2x efektívnejší než formát MP3;obsahuje ochranu autorských práv (DRM –digital right management)  
 
@@ -1665,7 +1666,7 @@ Napr. priestorovej rozlišovacej schopnosti
     - kódované vnútrosnímkovým kódovaním na báze DCT
     - rozmer blokov 8x8op
     - rovnomerná kvantizácia DCT koeficientov
-    - diferenčné kódovanieDC koeficientov
+    - diferenčné kódovanie DC koeficientov
     - „cik-cak“ snímanie DCT koeficientov a ich RL kódovanie
     - entropické kódovanie
     - veľmi nízka kompresia údajov
@@ -1673,7 +1674,7 @@ Napr. priestorovej rozlišovacej schopnosti
 - snímky P
     - kódované medzisnímkovou predikciou  a kompenzáciou pohybu s referenciou na predošlé I, resp. P snímky
     - rozmer blokov pre estimáciu a kompenzáciou pohybu 16x16 op
-    - jeden vektor pohybuna makroblok
+    - jeden vektor pohybu na makroblok
     - diferenčné kódovanie vektorov pohybu
     - kódovanie predikčnej chyby pomocou 8x8 blokovej DCT
     - rovnomerná kvantizácia s prahovaním
@@ -1694,10 +1695,10 @@ Napr. priestorovej rozlišovacej schopnosti
 
 - základná charakteristika
     - rozšírenie MPEG-1 o video s prekladaným riadkovaním
-    - optimalizácia televíznej rozlišovacej schopnosti pomocou škálovania(v oblastipomeru SNR, v priestorovejoblastia v časovejoblasti)
+    - optimalizácia televíznej rozlišovacej schopnosti pomocou škálovania(v oblastipomeru SNR, v priestorovej oblasti a v časovej oblasti)
     - kvalita obrazu porovanteľná s normami NTSC, PAL, SECAM pri prenos. rýchlosti 4-8 Mb/s
     - kvalita HDTV pri prenosovej rýchlosti 20 Mb/s
-    - kompatibilitas MPEG-1
+    - kompatibilita s MPEG-1
     - zavedené nové pojmy
         - úrovne(levels)
         - profily(profiles)
@@ -1741,8 +1742,8 @@ Napr. priestorovej rozlišovacej schopnosti
         - syntetické video –modelovanie objektov s využitím mriežkou modelovaných tvárí
 
 - kódovanie reálneho videa
-    - koncepcia videoobjektových rovín (VOP), resp. časových rezov
-    - videoobjektová rovina (VOP)reprezentuje informáciu o tvare, pohybe a textúre objektu
+    - koncepcia videoo bjektových rovín (VOP), resp. časových rezov
+    - videoobjektová rovina (VOP) reprezentuje informáciu o tvare, pohybe a textúre objektu
     - VOP patriace tomu istému objektu v scéne sa označujú ako videoobjekty (VO)
     - každej VOP zodpovedá príslušný bitový tok a tie vytvárajú videoobjektové vrstvy (VOL)
 
@@ -1762,7 +1763,7 @@ Napr. priestorovej rozlišovacej schopnosti
     - animácia tvárí
         - súbor animačných parametrov –vytvára základné črty tváre a umožňuje synchronizáciu obrazovej a zvukovej informácie
         - súbor definičných parametrov –precízne definuje formu tváre a jej textúru
-    - manipulácia s obsahom scény –umožňuje realizovať rôzne operácie s reálnymia umelými videoobjektami (napr. animácia reálnych VO syntetickými a pod.)
+    - manipulácia s obsahom scény –umožňuje realizovať rôzne operácie s reálnymi a umelými videoobjektami (napr. animácia reálnych VO syntetickými a pod.)
 
 ![obr136](img/obr136.png)
 
@@ -1782,7 +1783,7 @@ Napr. priestorovej rozlišovacej schopnosti
     - vyrovnávacia pamäť zabezpečuje režim CBR a riadi kvantizačný krok
     - na zvýšenie medzisnímkovej predikcie aplikuje sa tzv. Loop Filter s oknom 3x3 op
     - prvou snímkou je snímka typu I (vnútrosnímkové DCT kódovanie)
-    - ďalšie sú snímky typu P (priamamedzisnímková predikcia snímky I, resp. P)
+    - ďalšie sú snímky typu P (priama medzisnímková predikcia snímky I, resp. P)
     - snímky P, ktoré obsahujú makrobloky s malým pohybom nie sú kódované a prenášané
 
     ![obr137](img/obr137.png)
@@ -1797,7 +1798,7 @@ Napr. priestorovej rozlišovacej schopnosti
         - vo väčšej presnosti vyjadrenia vektorov pohybu(polprvková predikcia, násobky polovice op)
         - v tzv. mediánovej predikcii vektorov pohybu (medián medzi pohybovými vektormi susedných makroblokov)
         - v modifikovanom VLC kódovaní (prikódovaní sa neuvažuje s kódovým slovom EOB)
-        - v režime PB snímok (ktoré obsahujúP a B snímku, kódujú sa však ako jedna snímka)
+        - v režime PB snímok (ktoré obsahujú P a B snímku, kódujú sa však ako jedna snímka)
 
 ### H.263+
 
@@ -1816,20 +1817,20 @@ Napr. priestorovej rozlišovacej schopnosti
     - zavedené nové pojmy
         - kódovaný obraz = snímka určená na kódovanie
         - referenčný obraz = predošlá kódovaná snímka
-        - makrobloky obsahujú 16x16 jasových a8x8 chrominančných zložiek
+        - makrobloky obsahujú 16x16 jasových a 8x8 chrominančných zložiek
         - makrobloky (GOB) usporiadané do rezov (I, P, B a SI a SP rezy)
 
 ![obr138](img/obr138.png)
 
 - vylepšenia spočívajú
     - v použití Hadamardovej transformácie pri vnútrosnímkovom kódovaní makroblokov
-    - v aplikácii skalárnej kvantizácie pre priamy ainverzný režim
+    - v aplikácii skalárnej kvantizácie pre priamy a inverzný režim
     - v nových typoch entropického kódovania
         - CABAC(context-adaptivearithmeticcoding) s pevnoudĺžkou kódového slova
         - CAVLC(context-adaptivevariablelengthcoding) s premennoudĺžkou kódového slova
     - v zavedení troch nových profilov
-        - základný profil –podporuje vnútrosnímkovú a medzisnímkovú predikciu s využitím I aP rezov     a CAVLC entropické kódovanie (pre videokonferencie)
-        - hlavný profil –navyše podporuje video s prekladaným riadkovaním, medzisnímkové kódovanie s využitím B rezov a váhovanou predikciou a CABAC kódovanie(pre TVvysielanie)
+        - základný profil –podporuje vnútrosnímkovú a medzisnímkovú predikciu s využitím I a P rezov     a CAVLC entropické kódovanie (pre videokonferencie)
+        - hlavný profil –navyše podporuje video s prekladaným riadkovaním, medzisnímkové kódovanie s využitím B rezov a váhovanou predikciou a CABAC kódovanie(pre TV vysielanie)
         - rozšírený profil –ako základný, navyše však podporuje režimy pre efektívne prepínanie kódovaných videotokov s využitím SI a SP rezov a zvýšenú odolnosť voči poruchám
 
 ![obr139](img/obr139.png)
